@@ -2,7 +2,7 @@ package tax;
 
 import java.math.BigDecimal;
 
-public class TaxDecorator implements Tax {
+public abstract class TaxDecorator implements Tax {
 
     protected Tax decoratorTax;
 
