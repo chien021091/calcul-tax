@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 
 public class ImportTax extends TaxDecorator {
 
-    private static final BigDecimal tauxTax  = BigDecimal.valueOf(0.05);
+    private static final BigDecimal taxRate  = BigDecimal.valueOf(0.05);
 
     public ImportTax(Tax decoratorTax) {
         super(decoratorTax);
@@ -12,6 +12,6 @@ public class ImportTax extends TaxDecorator {
 
     @Override
     public BigDecimal getTax(BigDecimal priceHt) {
-        return decoratorTax.getTax(priceHt).add(priceHt.multiply(tauxTax));
+        return decoratorTax.getTax(priceHt).add(priceHt.multiply(taxRate));
     }
 }
